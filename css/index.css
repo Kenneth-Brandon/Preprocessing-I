@@ -119,7 +119,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -143,7 +143,7 @@ body {
 }
 h1,
 h2 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   color: #ffffff;
   font-size: 2.5rem;
 }
@@ -151,7 +151,7 @@ p {
   color: #ffffff;
 }
 .container {
-  width: 880px;
+  width: 1000px;
   margin: 0 auto;
 }
 header {
@@ -170,7 +170,7 @@ a {
   text-decoration: none;
   padding: 10px;
   font-size: 2rem;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   color: #ff0007;
 }
 header nav a:hover {
@@ -201,7 +201,7 @@ img {
   padding: 20px;
 }
 .topContent h1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 6rem;
   color: #ffffff;
 }
@@ -246,6 +246,8 @@ img {
   justify-content: space-around;
   align-content: center;
   background: #ff0007;
+  padding: 20px;
+  border: 1px solid #ffffff;
 }
 .middleContentTable {
   width: 48%;
@@ -300,4 +302,360 @@ th {
   background: #ff0007;
   color: #ffffff;
   text-align: center;
+}
+@media (max-width: 800px) {
+  .bottomFooter {
+    width: 100%;
+    background: blue;
+  }
+}
+.bottomFooter * {
+  box-sizing: border-box;
+}
+.bottomFooter html,
+.bottomFooter body {
+  height: 100%;
+}
+.bottomFooter html {
+  font-size: 62.5%;
+  background: black;
+}
+.bottomFooter body {
+  font-size: 2rem;
+}
+.bottomFooter h1,
+.bottomFooter h2 {
+  font-family: "Dancing Script", cursive;
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+.bottomFooter p {
+  color: #ffffff;
+}
+.bottomFooter header {
+  width: 100%;
+  margin: 0 auto;
+}
+.bottomFooter nav {
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.bottomFooter a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  color: #ff0007;
+}
+.bottomFooter header nav a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.bottomFooter header nav a:first-child {
+  margin-left: 0;
+}
+.bottomFooter header nav a:last-child {
+  margin-right: 0;
+}
+.bottomFooter .top-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ff0007;
+}
+.bottomFooter img {
+  width: 100%;
+}
+.bottomFooter .top-container .topContent {
+  width: 100%;
+  height: 350px;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+.bottomFooter .topContent h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 6rem;
+  color: #ffffff;
+}
+.bottomFooter .topContent blockquote {
+  font-size: 1.7rem;
+  background: #ff0007;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.bottomFooter .topContent blockquote p {
+  font-style: italic;
+}
+.bottomFooter .topContent blockquote footer {
+  color: #ffffff;
+  margin-top: 5px;
+  font-size: 2rem;
+}
+.bottomFooter .topContent p {
+  margin-top: 10px;
+}
+.bottomFooter .topContent button {
+  font-size: 2rem;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.bottomFooter .middle-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.bottomFooter .middleContentText {
+  width: 48%;
+  height: 225px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
+  background: #ff0007;
+  padding: 20px;
+  border: 1px solid #ffffff;
+}
+.bottomFooter .middleContentTable {
+  width: 48%;
+  height: 225px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+.bottomFooter .middleContentTable table {
+  width: 100%;
+}
+.bottomFooter table {
+  border-collapse: collapse;
+}
+.bottomFooter th,
+.bottomFooter td {
+  border: 1px solid #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+.bottomFooter tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.bottomFooter tr:nth-child(odd) {
+  background-color: black;
+  color: white;
+}
+.bottomFooter th {
+  background-color: #ff0007;
+  color: #ffffff;
+}
+.bottomFooter .bottom-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.bottomFooter .bottom-Content {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.bottomFooter .bottomFooter {
+  width: 100%;
+  margin-top: 20px;
+  background: #ff0007;
+  color: #ffffff;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .bottomFooter .bottomFooter {
+    width: 80%;
+    background: green;
+  }
+  .bottomFooter .bottomFooter * {
+    box-sizing: border-box;
+  }
+  .bottomFooter .bottomFooter html,
+  .bottomFooter .bottomFooter body {
+    height: 100%;
+  }
+  .bottomFooter .bottomFooter html {
+    font-size: 62.5%;
+    background: black;
+  }
+  .bottomFooter .bottomFooter body {
+    font-size: 2rem;
+  }
+  .bottomFooter .bottomFooter h1,
+  .bottomFooter .bottomFooter h2 {
+    font-family: "Dancing Script", cursive;
+    color: #ffffff;
+    font-size: 2.5rem;
+  }
+  .bottomFooter .bottomFooter p {
+    color: #ffffff;
+  }
+  .bottomFooter .bottomFooter header {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .bottomFooter .bottomFooter nav {
+    width: 100%;
+    margin-top: 25px;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+  .bottomFooter .bottomFooter a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 2rem;
+    font-family: "Dancing Script", cursive;
+    color: #ff0007;
+  }
+  .bottomFooter .bottomFooter header nav a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .bottomFooter .bottomFooter header nav a:first-child {
+    margin-left: 0;
+  }
+  .bottomFooter .bottomFooter header nav a:last-child {
+    margin-right: 0;
+  }
+  .bottomFooter .bottomFooter .top-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ff0007;
+  }
+  .bottomFooter .bottomFooter img {
+    width: 100%;
+  }
+  .bottomFooter .bottomFooter .top-container .topContent {
+    width: 100%;
+    height: 350px;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .bottomFooter .bottomFooter .topContent h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 6rem;
+    color: #ffffff;
+  }
+  .bottomFooter .bottomFooter .topContent blockquote {
+    font-size: 1.7rem;
+    background: #ff0007;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  .bottomFooter .bottomFooter .topContent blockquote p {
+    font-style: italic;
+  }
+  .bottomFooter .bottomFooter .topContent blockquote footer {
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 2rem;
+  }
+  .bottomFooter .bottomFooter .topContent p {
+    margin-top: 10px;
+  }
+  .bottomFooter .bottomFooter .topContent button {
+    font-size: 2rem;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .bottomFooter .bottomFooter .middle-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .bottomFooter .bottomFooter .middleContentText {
+    width: 48%;
+    height: 225px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    background: #ff0007;
+    padding: 20px;
+    border: 1px solid #ffffff;
+  }
+  .bottomFooter .bottomFooter .middleContentTable {
+    width: 48%;
+    height: 225px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .bottomFooter .bottomFooter .middleContentTable table {
+    width: 100%;
+  }
+  .bottomFooter .bottomFooter table {
+    border-collapse: collapse;
+  }
+  .bottomFooter .bottomFooter th,
+  .bottomFooter .bottomFooter td {
+    border: 1px solid #ffffff;
+    padding: 15px;
+    text-align: center;
+  }
+  .bottomFooter .bottomFooter tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .bottomFooter .bottomFooter tr:nth-child(odd) {
+    background-color: black;
+    color: white;
+  }
+  .bottomFooter .bottomFooter th {
+    background-color: #ff0007;
+    color: #ffffff;
+  }
+  .bottomFooter .bottomFooter .bottom-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .bottomFooter .bottomFooter .bottom-Content {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .bottomFooter .bottomFooter .bottomFooter {
+    width: 100%;
+    margin-top: 20px;
+    background: #ff0007;
+    color: #ffffff;
+    text-align: center;
+  }
 }
