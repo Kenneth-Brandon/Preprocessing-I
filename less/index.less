@@ -142,56 +142,44 @@ body {
 // Start here
 
 html {
-  font-size: 62.5%;
-  background: orangered;
-}
-
+font-size: 62.5%;
+background: orangered;
 @media (max-width: 500px) {
-  html {
-    border: 1px solid white;
-  }
+border: 1px solid white;
 }
+} // end of html
 
 h1 {
   font-family: @headerFont;
   color: white;
   font-size: 8rem;
   margin-top: 20px;
-}
-
-@media (max-width: 500px) {
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
+  @media (max-width: 500px) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  } //end of h1
 
 h2 {
   font-family: @headerFont;
   color: white;
   font-size: 4rem;
   text-align: center;
-}
+  @media (max-width: 500px) {
+      text-align: center;
+      font-size: 2.7rem;
+    }
+  } //end of h2
 
-@media (max-width: 500px) {
-  h2 {
-    text-align: center;
-    font-size: 2.7rem;
-  }
-}
-
-p {
+p, li {
   color: white;
   font-size: 2rem;
   text-align: center;
-}
-
-@media (max-width: 500px) {
-  p {
-    text-align: center;
-    font-size: 1.5rem;
-  }
-}
+  @media (max-width: 500px) {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  } // end of p, li
 
 img {
   width: 100%;
@@ -202,14 +190,6 @@ img {
 @fontcolor: red;
 @headerFont: "Dancing Script", cursive;
 @pFont: "Merriweather", serif;
-
-// .containerMixin {
-//   width: 100%;
-//   margin: 0 auto;
-//   padding: 20px;
-//   background: #ff0007;
-//   border: 2px solid #ffffff;
-// }
 
 // .flexMixinColumn {
 //   display: inline-flex;
@@ -230,57 +210,45 @@ img {
 header {
   width: 100%;
   margin: 0 auto;
-}
-
-// phone size
-@media (max-width: 500px) {
-  header {
-    background: navy;
-    border: 1px solid white;
-  }
-}
-
-nav {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-}
-
-@media (max-width: 500px) {
-  header nav {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-a {
-  text-decoration: none;
-  padding: 10px;
-  font-size: 2rem;
-  font-family: @headerFont;
-  color: white;
-}
-
-@media (max-width: 500px) {
-  a {
-    color: red;
-    border-bottom: 2px solid white;
-    width: 100%;
-    text-align: center;
-    font-size: 5rem;
-  }
-}
+  @media (max-width: 500px) {
+      background: navy;
+      border: 1px solid white;
+    }
+    nav {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      @media (max-width: 500px) {
+          flex-direction: column;
+          align-items: center;
+      }
+      a {
+        text-decoration: none;
+        padding: 10px;
+        font-size: 2rem;
+        font-family: @headerFont;
+        color: white;
+        @media (max-width: 500px) {
+            color: red;
+            border-bottom: 2px solid white;
+            width: 100%;
+            text-align: center;
+            font-size: 5rem;
+        }
+      } // end of anchor
+    } // end of nav
+  } // end of header
 
 header nav a:hover {
   text-decoration: underline;
   cursor: pointer;
+  &:first-child {
+    margin-left: 0;
+  &:last-child {
+    margin-right: 0;
+  }
 }
-header nav a:first-child {
-  margin-left: 0;
-}
-header nav a:last-child {
-  margin-right: 0;
 }
 
 .top-container {
@@ -289,29 +257,23 @@ header nav a:last-child {
   padding: 20px;
   background: red;
   border: 2px solid white;
-}
-
-@media (max-width: 500px) {
-  .top-container {
-    border: 1px solid white;
-    background: navy;
-    padding: 0 0 0 0;
+  @media (max-width: 500px) {
+      border: 1px solid white;
+      background: navy;
+      padding: 0 0 0 0;
   }
 }
 
-.top-container .topContent {
+.topContent {
   width: 100%;
   height: 200px;
   display: inline-flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-}
-
-@media (max-width: 500px) {
-  .top-container .topContent {
-    border: 2px solid white;
-    padding: 20px;
+  @media (max-width: 500px) {
+      border: 2px solid white;
+      padding: 20px;
   }
 }
 
@@ -319,11 +281,8 @@ header nav a:last-child {
   background: orangered;
   border-radius: 10px;
   border: 2px solid white;
-}
-
-@media (max-width: 500px) {
-  .topContent blockquote {
-    background: red;
+  @media (max-width: 500px) {
+      background: red;
   }
 }
 
