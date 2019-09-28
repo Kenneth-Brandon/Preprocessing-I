@@ -136,125 +136,208 @@ body {
 }
 html {
   font-size: 62.5%;
-  background: black;
+  background: orangered;
 }
-body {
-  font-size: 2rem;
+@media (max-width: 500px) {
+  html {
+    border: 1px solid white;
+  }
 }
 h1 {
   font-family: "Dancing Script", cursive;
-  color: #ffffff;
+  color: white;
   font-size: 8rem;
   margin-top: 20px;
 }
+@media (max-width: 500px) {
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 h2 {
   font-family: "Dancing Script", cursive;
-  color: #ffffff;
+  color: white;
   font-size: 4rem;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  h2 {
+    text-align: center;
+    font-size: 2.7rem;
+  }
 }
 p {
-  color: #ffffff;
+  color: white;
   font-size: 2rem;
+  text-align: center;
 }
-.containerMixin {
+@media (max-width: 500px) {
+  p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+img {
   width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  background: #ff0007;
-  border: 2px solid #ffffff;
+  height: auto;
+  border: 1px solid white;
 }
-.flexMixinColumn {
-  display: inline-flex;
-  flex-flow: column nowrap;
-}
-.flexMixinRow {
-  display: inline-flex;
-  flex-flow: row nowrap;
-}
-.container {
-  width: 1000px;
+.container-home {
+  max-width: 1000px;
   margin: 0 auto;
 }
-.container header {
+header {
   width: 100%;
   margin: 0 auto;
 }
-.container nav {
+@media (max-width: 500px) {
+  header {
+    background: navy;
+    border: 1px solid white;
+  }
+}
+nav {
   width: 100%;
-  display: inline-flex;
+  display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
 }
-.container a {
+@media (max-width: 500px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+a {
   text-decoration: none;
   padding: 10px;
   font-size: 2rem;
   font-family: "Dancing Script", cursive;
-  color: #ffffff;
+  color: white;
 }
-.container header nav a:hover {
+@media (max-width: 500px) {
+  a {
+    color: red;
+    border-bottom: 2px solid white;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+  }
+}
+header nav a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.container header nav a:first-child {
+header nav a:first-child {
   margin-left: 0;
 }
-.container header nav a:last-child {
+header nav a:last-child {
   margin-right: 0;
 }
-.container .top-container {
+.top-container {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background: #ff0007;
-  border: 2px solid #ffffff;
+  background: red;
+  border: 2px solid white;
 }
-.container img {
-  width: 100%;
+@media (max-width: 500px) {
+  .top-container {
+    border: 1px solid white;
+    background: navy;
+    padding: 0 0 0 0;
+  }
 }
-.container .top-container .topContent {
+.top-container .topContent {
   width: 100%;
   height: 200px;
   display: inline-flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
 }
-.container .topContent blockquote {
-  font-size: 1.5rem;
-  background: #ff3400;
+@media (max-width: 500px) {
+  .top-container .topContent {
+    border: 2px solid white;
+    padding: 20px;
+  }
+}
+.topContent blockquote {
+  background: orangered;
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid white;
 }
-.container .topContent blockquote p {
+@media (max-width: 500px) {
+  .topContent blockquote {
+    background: red;
+  }
+}
+.topContent blockquote p {
   font-style: italic;
 }
-.container .topContent blockquote footer {
-  color: #ffffff;
-  margin-top: 5px;
-  font-size: 2rem;
+@media (max-width: 500px) {
+  .topContent blockquote p {
+    padding: 10px;
+  }
 }
-.container .topContent button {
+.topContent blockquote footer {
+  color: white;
+  margin-top: 5px;
+  padding: 10px;
   font-size: 2rem;
-  background: #ff3400;
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  text-align: right;
+}
+@media (max-width: 500px) {
+  .topContent blockquote footer {
+    text-align: center;
+    padding: 0 0 0 0;
+    margin: 2px;
+  }
+}
+.topContent button {
+  font-size: 2rem;
+  background: orangered;
+  border: 2px solid white;
+  color: white;
   border-radius: 20px;
   margin-top: 15px;
   cursor: pointer;
 }
-.container .middle-container-left {
+@media (max-width: 500px) {
+  .topContent button {
+    background: red;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+}
+.middle-container {
   width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  .middle-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.middle-container-left {
+  width: 50%;
   margin: 0 auto;
   padding: 20px;
-  background: #ff0007;
-  border: 2px solid #ffffff;
-  display: inline-flex;
+  background: orangered;
+  border: 2px solid white;
+  display: flex;
   flex-flow: column nowrap;
-  width: 49.5%;
 }
-.container .middleContentText {
+@media (max-width: 500px) {
+  .middle-container-left {
+    background: navy;
+    width: 100%;
+  }
+}
+.middleContentText {
   width: 100%;
   height: 225px;
   margin: 0 auto;
@@ -262,50 +345,66 @@ p {
   align-content: center;
   padding: 10px;
 }
-.container .middleContentText h2 {
+@media (max-width: 500px) {
+  .middleContentText {
+    background: navy;
+    width: 100%;
+    padding: 20px;
+    height: 125px;
+  }
+}
+.middleContentText h2 {
   text-align: center;
   margin-top: 25px;
 }
-.container .middle-container-right {
-  width: 100%;
+.middle-container-right {
+  width: 50%;
   margin: 0 auto;
   padding: 20px;
-  background: #ff0007;
-  border: 2px solid #ffffff;
-  display: inline-flex;
+  background: orangered;
+  border: 2px solid white;
+  display: flex;
   flex-flow: column nowrap;
-  width: 49.5%;
 }
-.container .middleContentTable {
+@media (max-width: 500px) {
+  .middle-container-right {
+    background: navy;
+    width: 100%;
+    height: 175px;
+  }
+}
+.middleContentTable h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.middleContentTable {
   width: 100%;
   height: 266px;
   margin: 0 auto;
   justify-content: center;
   align-content: center;
 }
-.container .middleContentTable h2 {
-  text-align: center;
-}
-.container .middleContentTable table {
+.middleContentTable table {
   border-collapse: collapse;
 }
-.container .middleContentTable th,
-.container td,
-.container tr {
-  width: 33.3%;
-  border: 1px solid #ffffff;
-  padding: 15px;
-  text-align: center;
-  color: #ffffff;
+@media (max-width: 500px) {
+  .middleContentTable table {
+    background: red;
+  }
 }
-.container .bottom-container {
+.bottom-container {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background: #ff0007;
-  border: 2px solid #ffffff;
+  background: red;
+  border: 2px solid white;
 }
-.container .bottom-Content {
+@media (max-width: 500px) {
+  .bottom-container {
+    background: navy;
+  }
+}
+.bottom-Content {
   width: 100%;
   display: inline-flex;
   flex-flow: column nowrap;
@@ -313,35 +412,51 @@ p {
   align-items: flex-start;
   margin-top: 25px;
 }
-.container .bottom-Content table {
+.bottom-Content table {
   border-collapse: collapse;
 }
-.container .bottom-Content th,
-.container td,
-.container tr {
+.bottom-Content th,
+td,
+tr {
   width: 25%;
-  border: 2px solid #000000;
+  border: 2px solid white;
   padding: 15px;
   text-align: center;
-  color: #000000;
-}
-.container .bottom-Content tr:nth-child(even) {
-  background: #ffffff;
-  color: #ff0007;
-}
-.container .bottom-Content tr:nth-child(odd) {
-  background: #ff0007;
   color: white;
+  font-size: 1.6rem;
 }
-.container .bottomFooter {
+@media (max-width: 500px) {
+  .bottom-Content th,
+  td,
+  tr {
+    border: 2px solid white;
+    color: white;
+  }
+}
+.bottom-Content tr:nth-child(even) {
+  background: orangered;
+}
+@media (max-width: 500px) {
+  .bottom-Content tr:nth-child(even) {
+    background: navy;
+  }
+}
+.bottom-Content tr:nth-child(odd) {
+  background: red;
+}
+.bottomFooter {
   width: 100%;
-  margin-top: 20px;
-  background: #ff0007;
-  color: #ffffff;
+  height: 75px;
+  border: 2px solid white;
+  background: orangered;
+  color: white;
   text-align: center;
 }
 @media (max-width: 500px) {
-  .container {
-    width: 80%;
+  .bottomFooter {
+    background: red;
   }
+}
+.bottomText {
+  margin-top: 20px;
 }
