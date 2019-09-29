@@ -142,11 +142,11 @@ body {
 // Start here
 
 html {
-font-size: 62.5%;
-background: orangered;
-@media (max-width: 500px) {
-border: 1px solid white;
-}
+  font-size: 62.5%;
+  background: orangered;
+  @media (max-width: 500px) {
+    border: 1px solid white;
+  }
 } // end of html
 
 h1 {
@@ -155,10 +155,10 @@ h1 {
   font-size: 8rem;
   margin-top: 20px;
   @media (max-width: 500px) {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  } //end of h1
+    text-align: center;
+    margin-bottom: 20px;
+  }
+} //end of h1
 
 h2 {
   font-family: @headerFont;
@@ -166,20 +166,22 @@ h2 {
   font-size: 4rem;
   text-align: center;
   @media (max-width: 500px) {
-      text-align: center;
-      font-size: 2.7rem;
-    }
-  } //end of h2
+    text-align: center;
+    font-size: 2.7rem;
+  }
+} //end of h2
 
-p, li {
+p,
+li {
   color: white;
   font-size: 2rem;
   text-align: center;
+  font-family: @pFont;
   @media (max-width: 500px) {
-      text-align: center;
-      font-size: 1.5rem;
-    }
-  } // end of p, li
+    text-align: center;
+    font-size: 1.5rem;
+  }
+} // end of p, li
 
 img {
   width: 100%;
@@ -191,65 +193,59 @@ img {
 @headerFont: "Dancing Script", cursive;
 @pFont: "Merriweather", serif;
 
-// .flexMixinColumn {
-//   display: inline-flex;
-//   flex-flow: column nowrap;
-// }
-
-// .flexMixinRow {
-//   display: inline-flex;
-//   flex-flow: row nowrap;
-// }
+.flexMixinColumn {
+  display: inline-flex;
+  flex-flow: column nowrap;
+}
 
 .container-home {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-// header styles here
 header {
   width: 100%;
   margin: 0 auto;
   @media (max-width: 500px) {
-      background: navy;
-      border: 1px solid white;
+    background: navy;
+    border: 1px solid white;
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
     }
-    nav {
-      width: 100%;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-end;
+    a {
+      text-decoration: none;
+      padding: 10px;
+      font-size: 2rem;
+      font-family: @headerFont;
+      color: white;
       @media (max-width: 500px) {
-          flex-direction: column;
-          align-items: center;
+        color: @fontcolor;
+        border-bottom: 2px solid white;
+        width: 100%;
+        text-align: center;
+        font-size: 5rem;
       }
-      a {
-        text-decoration: none;
-        padding: 10px;
-        font-size: 2rem;
-        font-family: @headerFont;
-        color: white;
-        @media (max-width: 500px) {
-            color: red;
-            border-bottom: 2px solid white;
-            width: 100%;
-            text-align: center;
-            font-size: 5rem;
-        }
-      } // end of anchor
-    } // end of nav
-  } // end of header
+    } // end of anchor
+  } // end of nav
+} // end of header
 
 header nav a:hover {
   text-decoration: underline;
   cursor: pointer;
   &:first-child {
     margin-left: 0;
-  &:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-}
-}
+} //end of a:hover
 
 .top-container {
   width: 100%;
@@ -258,22 +254,21 @@ header nav a:hover {
   background: red;
   border: 2px solid white;
   @media (max-width: 500px) {
-      border: 1px solid white;
-      background: navy;
-      padding: 0 0 0 0;
+    border: 1px solid white;
+    background: navy;
+    padding: 0 0 0 0;
   }
 }
 
 .topContent {
   width: 100%;
   height: 200px;
-  display: inline-flex;
-  flex-flow: column nowrap;
+  .flexMixinColumn();
   justify-content: center;
   align-items: flex-start;
   @media (max-width: 500px) {
-      border: 2px solid white;
-      padding: 20px;
+    border: 2px solid white;
+    padding: 20px;
   }
 }
 
@@ -282,35 +277,28 @@ header nav a:hover {
   border-radius: 10px;
   border: 2px solid white;
   @media (max-width: 500px) {
-      background: red;
+    background: red;
   }
-}
+  p {
+    font-style: italic;
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
+  } //end of paragraph
+} //end of .topContent
 
-.topContent blockquote p {
-  font-style: italic;
-}
-
-@media (max-width: 500px) {
-  .topContent blockquote p {
-    padding: 10px;
-  }
-}
-
-.topContent blockquote footer {
+footer {
   color: white;
   margin-top: 5px;
   padding: 10px;
   font-size: 2rem;
   text-align: right;
-}
-
-@media (max-width: 500px) {
-  .topContent blockquote footer {
+  @media (max-width: 500px) {
     text-align: center;
     padding: 0 0 0 0;
     margin: 2px;
   }
-}
+} // end of footer
 
 .topContent button {
   font-size: 2rem;
@@ -320,28 +308,22 @@ header nav a:hover {
   border-radius: 20px;
   margin-top: 15px;
   cursor: pointer;
-}
-
-@media (max-width: 500px) {
-  .topContent button {
+  @media (max-width: 500px) {
     background: red;
     margin: 0 auto;
     margin-top: 10px;
   }
-}
+} // end of .topContent button
 
 .middle-container {
   width: 100%;
   display: inline-flex;
   flex-direction: row;
-}
-
-@media (max-width: 500px) {
-  .middle-container {
+  @media (max-width: 500px) {
     display: flex;
     flex-direction: column;
   }
-}
+} // end of .middle-container
 
 .middle-container-left {
   width: 50%;
@@ -351,37 +333,29 @@ header nav a:hover {
   border: 2px solid white;
   display: flex;
   flex-flow: column nowrap;
-}
-
-@media (max-width: 500px) {
-  .middle-container-left {
+  @media (max-width: 500px) {
     background: navy;
     width: 100%;
   }
-}
-
-.middleContentText {
-  width: 100%;
-  height: 225px;
-  margin: 0 auto;
-  justify-content: center;
-  align-content: center;
-  padding: 10px;
-}
-
-@media (max-width: 500px) {
   .middleContentText {
-    background: navy;
     width: 100%;
-    padding: 20px;
-    height: 125px;
-  }
-}
-
-.middleContentText h2 {
-  text-align: center;
-  margin-top: 25px;
-}
+    height: 225px;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    @media (max-width: 500px) {
+      background: navy;
+      width: 100%;
+      padding: 20px;
+      height: 125px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 25px;
+    }
+  } // end of .middleContentText
+} // end of .middle-container-left
 
 .middle-container-right {
   width: 50%;
@@ -391,20 +365,12 @@ header nav a:hover {
   border: 2px solid white;
   display: flex;
   flex-flow: column nowrap;
-}
-
-@media (max-width: 500px) {
-  .middle-container-right {
+  @media (max-width: 500px) {
     background: navy;
     width: 100%;
     height: 175px;
   }
-}
-
-.middleContentTable h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
+} // end of .middle-container-right
 
 .middleContentTable {
   width: 100%;
@@ -412,17 +378,18 @@ header nav a:hover {
   margin: 0 auto;
   justify-content: center;
   align-content: center;
-}
-
-.middleContentTable table {
-  border-collapse: collapse;
-}
-
-@media (max-width: 500px) {
-  .middleContentTable table {
-    background: red;
-  }
-}
+  font-family: @pFont;
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    table {
+      border-collapse: collapse;
+      @media (max-width: 500px) {
+        background: red;
+      }
+    } // end of table
+  } // end of h2
+} // end of .middleContentTable
 
 .bottom-container {
   width: 100%;
@@ -430,18 +397,14 @@ header nav a:hover {
   padding: 20px;
   background: red;
   border: 2px solid white;
-}
-
-@media (max-width: 500px) {
-  .bottom-container {
+  @media (max-width: 500px) {
     background: navy;
   }
-}
+} // end of .bottom-container
 
 .bottom-Content {
   width: 100%;
-  display: inline-flex;
-  flex-flow: column nowrap;
+  .flexMixinColumn();
   justify-content: center;
   align-items: flex-start;
   margin-top: 25px;
@@ -459,31 +422,22 @@ tr {
   padding: 15px;
   text-align: center;
   color: white;
-  font-size: 1.6rem;
-}
-
-@media (max-width: 500px) {
-  .bottom-Content th,
-  td,
-  tr {
+  font-size: 1.3rem;
+  font-family: @pFont;
+  @media (max-width: 500px) {
     border: 2px solid white;
     color: white;
   }
-}
-
-.bottom-Content tr:nth-child(even) {
-  background: orangered;
-}
-
-@media (max-width: 500px) {
-  .bottom-Content tr:nth-child(even) {
-    background: navy;
-  }
-}
-
-.bottom-Content tr:nth-child(odd) {
-  background: red;
-}
+  &:nth-child(even) {
+    background: red;
+    @media (max-width: 500px) {
+      background: navy;
+    }
+    &:nth-child(odd) {
+      background: red;
+    } // end of tr:nth-child(odd)
+  } // end of tr:nth-child(even)
+} // end of .bottom-Content th, td, tr
 
 .bottomFooter {
   width: 100%;
@@ -492,14 +446,7 @@ tr {
   background: orangered;
   color: white;
   text-align: center;
-}
-
-@media (max-width: 500px) {
-  .bottomFooter {
+  @media (max-width: 500px) {
     background: red;
   }
-}
-
-.bottomText {
-  margin-top: 20px;
-}
+} // end of .bottomFooter

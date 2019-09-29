@@ -172,6 +172,7 @@ li {
   color: white;
   font-size: 2rem;
   text-align: center;
+  font-family: "Merriweather", serif;
 }
 @media (max-width: 500px) {
   p,
@@ -184,6 +185,10 @@ img {
   width: 100%;
   height: auto;
   border: 1px solid white;
+}
+.flexMixinColumn {
+  display: inline-flex;
+  flex-flow: column nowrap;
 }
 .container-home {
   max-width: 1000px;
@@ -283,7 +288,7 @@ header nav a:hover:first-child:last-child {
     padding: 10px;
   }
 }
-.topContent blockquote footer {
+footer {
   color: white;
   margin-top: 5px;
   padding: 10px;
@@ -291,7 +296,7 @@ header nav a:hover:first-child:last-child {
   text-align: right;
 }
 @media (max-width: 500px) {
-  .topContent blockquote footer {
+  footer {
     text-align: center;
     padding: 0 0 0 0;
     margin: 2px;
@@ -339,7 +344,7 @@ header nav a:hover:first-child:last-child {
     width: 100%;
   }
 }
-.middleContentText {
+.middle-container-left .middleContentText {
   width: 100%;
   height: 225px;
   margin: 0 auto;
@@ -348,14 +353,14 @@ header nav a:hover:first-child:last-child {
   padding: 10px;
 }
 @media (max-width: 500px) {
-  .middleContentText {
+  .middle-container-left .middleContentText {
     background: navy;
     width: 100%;
     padding: 20px;
     height: 125px;
   }
 }
-.middleContentText h2 {
+.middle-container-left .middleContentText h2 {
   text-align: center;
   margin-top: 25px;
 }
@@ -375,22 +380,23 @@ header nav a:hover:first-child:last-child {
     height: 175px;
   }
 }
-.middleContentTable h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
 .middleContentTable {
   width: 100%;
   height: 266px;
   margin: 0 auto;
   justify-content: center;
   align-content: center;
+  font-family: "Merriweather", serif;
 }
-.middleContentTable table {
+.middleContentTable h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.middleContentTable h2 table {
   border-collapse: collapse;
 }
 @media (max-width: 500px) {
-  .middleContentTable table {
+  .middleContentTable h2 table {
     background: red;
   }
 }
@@ -425,7 +431,8 @@ tr {
   padding: 15px;
   text-align: center;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
+  font-family: "Merriweather", serif;
 }
 @media (max-width: 500px) {
   .bottom-Content th,
@@ -435,15 +442,21 @@ tr {
     color: white;
   }
 }
-.bottom-Content tr:nth-child(even) {
-  background: orangered;
+.bottom-Content th:nth-child(even),
+td:nth-child(even),
+tr:nth-child(even) {
+  background: red;
 }
 @media (max-width: 500px) {
-  .bottom-Content tr:nth-child(even) {
+  .bottom-Content th:nth-child(even),
+  td:nth-child(even),
+  tr:nth-child(even) {
     background: navy;
   }
 }
-.bottom-Content tr:nth-child(odd) {
+.bottom-Content th:nth-child(even):nth-child(odd),
+td:nth-child(even):nth-child(odd),
+tr:nth-child(even):nth-child(odd) {
   background: red;
 }
 .bottomFooter {
@@ -458,7 +471,4 @@ tr {
   .bottomFooter {
     background: red;
   }
-}
-.bottomText {
-  margin-top: 20px;
 }
