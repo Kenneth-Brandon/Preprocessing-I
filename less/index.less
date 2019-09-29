@@ -4,56 +4,456 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+// Start here
+
+html {
+  font-size: 62.5%;
+  background: orangered;
+  @media (max-width: 500px) {
+    border: 1px solid white;
+  }
+} // end of html
+
+h1 {
+  font-family: @headerFont;
+  color: white;
+  font-size: 8rem;
+  margin-top: 20px;
+  @media (max-width: 500px) {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+} //end of h1
+
+h2 {
+  font-family: @headerFont;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  @media (max-width: 500px) {
+    text-align: center;
+    font-size: 2.7rem;
+  }
+} //end of h2
+
+p,
+li {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  font-family: @pFont;
+  @media (max-width: 500px) {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+} // end of p, li
+
+img {
+  width: 100%;
+  height: auto;
+  border: 1px solid white;
+}
+
+@fontcolor: red;
+@headerFont: "Dancing Script", cursive;
+@pFont: "Merriweather", serif;
+
+.flexMixinColumn {
+  display: inline-flex;
+  flex-flow: column nowrap;
+}
+
+.nav {
+flex-flow: row nowrap;
+justify-content: flex-end;
+}
+
+.container-home {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 500px) {
+    background: navy;
+    border: 1px solid white;
+  }
+  nav {
+    width: 100%;
+    display: flex;
+    .nav();
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    a {
+      text-decoration: none;
+      padding: 10px;
+      font-size: 2rem;
+      font-family: @headerFont;
+      color: white;
+      @media (max-width: 500px) {
+        color: @fontcolor;
+        border-bottom: 2px solid white;
+        width: 100%;
+        text-align: center;
+        font-size: 5rem;
+      }
+    } // end of anchor
+  } // end of nav
+} // end of header
+
+header nav a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  &:first-child {
+    margin-left: 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+} //end of a:hover
+
+.top-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: red;
+  border: 2px solid white;
+  @media (max-width: 500px) {
+    border: 1px solid white;
+    background: navy;
+    padding: 0 0 0 0;
+  }
+}
+
+.topContent {
+  width: 100%;
+  height: 200px;
+  .flexMixinColumn();
+  justify-content: center;
+  align-items: flex-start;
+  @media (max-width: 500px) {
+    border: 2px solid white;
+    padding: 20px;
+  }
+}
+
+.topContent blockquote {
+  background: orangered;
+  border-radius: 10px;
+  border: 2px solid white;
+  @media (max-width: 500px) {
+    background: red;
+  }
+  p {
+    font-style: italic;
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
+  } //end of paragraph
+} //end of .topContent
+
+.topContent footer {
+  color: white;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 2rem;
+  text-align: right;
+  @media (max-width: 500px) {
+    text-align: center;
+    padding: 0 0 0 0;
+  }
+} // end of footer
+
+.topContent button {
+  font-size: 2rem;
+  background: orangered;
+  border: 2px solid white;
+  color: white;
+  border-radius: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  @media (max-width: 500px) {
+    background: red;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+} // end of .topContent button
+
+.middle-container {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
+} // end of .middle-container
+
+.middle-container-left {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background: orangered;
+  border: 2px solid white;
+  display: flex;
+  flex-flow: column nowrap;
+  @media (max-width: 500px) {
+    background: navy;
+    width: 100%;
+  }
+  .middleContentText {
+    width: 100%;
+    height: 225px;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    @media (max-width: 500px) {
+      background: navy;
+      width: 100%;
+      padding: 20px;
+      height: 125px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 25px;
+    }
+  } // end of .middleContentText
+} // end of .middle-container-left
+
+.middle-container-right {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background: orangered;
+  border: 2px solid white;
+  display: flex;
+  flex-flow: column nowrap;
+  @media (max-width: 500px) {
+    background: navy;
+    width: 100%;
+    height: 175px;
+  }
+} // end of .middle-container-right
+
+.middleContentTable {
+  width: 100%;
+  height: 266px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  font-family: @pFont;
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    table {
+      border-collapse: collapse;
+      @media (max-width: 500px) {
+        background: red;
+      }
+    } // end of table
+  } // end of h2
+} // end of .middleContentTable
+
+.bottom-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: red;
+  border: 2px solid white;
+  @media (max-width: 500px) {
+    background: navy;
+  }
+} // end of .bottom-container
+
+.bottom-Content {
+  width: 100%;
+  .flexMixinColumn();
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+.bottom-Content table {
+  border-collapse: collapse;
+}
+
+.bottom-Content th,
+td,
+tr {
+  width: 25%;
+  border: 2px solid white;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-family: @pFont;
+  @media (max-width: 500px) {
+    border: 2px solid white;
+    color: white;
+    font-size: 1.3rem;
+  }
+  &:nth-child(even) {
+    background: red;
+    @media (max-width: 500px) {
+      background: navy;
+    }
+    &:nth-child(odd) {
+      background: red;
+    } // end of tr:nth-child(odd)
+  } // end of tr:nth-child(even)
+} // end of .bottom-Content th, td, tr
+
+.bottomFooter {
+  width: 100%;
+  height: 75px;
+  border: 2px solid white;
+  background: orangered;
+  color: white;
+  text-align: center;
+  @media (max-width: 500px) {
+    background: red;
+  }
+   p {
+    margin-top: 5px;
+  } // end of paragraph
+} // end of .bottomFooter
